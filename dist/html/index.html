@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <title>関連文言一覧</title>
+  <style>
+    h2 {
+      margin-bottom: 4px;
+    }
+    .text-list {
+      margin-top: 0;
+      list-style: none;
+    }
+    .text-list > li {
+      display: inline-block;
+      margin-right: 16px;
+    }
+  </style>
+</head>
+<body>
+  <div id="app">
+    <h1>関連文言一覧</h1>
+    <div v-if="errored">
+      <p>申し訳ありませんが、情報を取得できませんでした。しばらくしてからもう一度お試しください。</p>
+    </div>
+    <div v-else>
+      <section>
+        <h2>Googleサジェスト</h2>
+        <div v-if="loading">Loading...</div>
+        <ul class="text-list" v-else>
+          <li v-for="text in texts.google">{{text}}</li>
+        </ul>
+      </section>
+      <section>
+        <h2>楽天サジェスト</h2>
+        <div v-if="loading">Loading...</div>
+        <ul class="text-list" v-else>
+          <li v-for="text in texts.rakuten">{{text}}</li>
+        </ul>
+      </section>
+      <section>
+        <h2>Amazonサジェスト</h2>
+        <div v-if="loading">Loading...</div>
+        <ul class="text-list" v-else>
+          <li v-for="text in texts.amazon">{{text}}</li>
+        </ul>
+      </section>
+      <section>
+        <h2>Bingサジェスト</h2>
+        <div v-if="loading">Loading...</div>
+        <ul class="text-list" v-else>
+          <li v-for="text in texts.bing">{{text}}</li>
+        </ul>
+      </section>
+      <section>
+        <h2>Google Trends</h2>
+        <div v-if="loading">Loading...</div>
+        <ul class="text-list" v-else>
+          <li v-for="text in texts.trends">{{text}}</li>
+        </ul>
+      </section>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.0"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.min.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+{
+  "name": "test_suggest",
+  "version": "1.0.0",
+  "description": "関連文言の取得",
+  "main": "index.js",
+  "scripts": {
+    "runTask": "node scripts/keywords.js && node scripts/merge.js",
+    "keywords": "node scripts/keywords.js",
+    "merge": "node scripts/merge.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "axios": "^0.19.0",
+    "axios-jsonp": "^1.0.4",
+    "google-trends-api": "^4.9.0",
+    "https": "^1.0.0",
+    "iconv-lite": "^0.5.0",
+    "jsonp": "^0.2.1",
+    "request": "^2.88.0",
+    "xml2js": "^0.4.22"
+  }
+}
